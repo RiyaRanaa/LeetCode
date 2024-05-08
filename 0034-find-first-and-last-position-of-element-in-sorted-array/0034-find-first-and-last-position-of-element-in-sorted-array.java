@@ -6,10 +6,8 @@ class Solution {
         if(ans[0]!=-1){
             ans[1]=search(nums,target,false); //ans[1]=end
         }
-        
         return ans;
     }
-    
     //returns index value
     int search(int[]nums,int target,boolean findstartindex){
         int ans=-1;
@@ -36,5 +34,4 @@ class Solution {
         }
         return ans;
     }
-    
 }
