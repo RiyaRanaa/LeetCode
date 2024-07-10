@@ -1,13 +1,13 @@
 class Solution:
     def minOperations(self, logs: List[str]) -> int:
-        s=0
+        f=0
         for element in logs:
             if element=="../":
-                if s>0:
-                    s-=1
+                if f>0:
+                    f-=1
             elif element =="./":
                 continue
             else:
-                s+=1
-        return s
+                f+=1
+        return f
         
