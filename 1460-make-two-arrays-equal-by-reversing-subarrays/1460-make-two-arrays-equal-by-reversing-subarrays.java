@@ -1,15 +1,16 @@
 class Solution {
     public boolean canBeEqual(int[] target, int[] arr) {
-        HashMap<Integer, Integer> _map= new HashMap();
-        for(int t:target){
-            int count=_map.getOrDefault(t,0);
-            _map.put(t,count+1);
+        int n=target.length;
+        if(n!=arr.length){
+            return false;
         }
-        for(int a:arr){
-            if(_map.containsKey(a) && _map.get(a)>0){
-                _map.put(a, _map.get(a)-1);
-            }
-            else{
+        int[] a=new int[1001];
+        for(int i=0;i<n;i++){
+            a[target[i]]++;
+            a[arr[i]]--;
+        }
+        for(int c:a){
+            if(c!=0){
                 return false;
             }
         }
