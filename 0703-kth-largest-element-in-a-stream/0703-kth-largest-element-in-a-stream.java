@@ -1,6 +1,6 @@
 import java.util.PriorityQueue;
 class KthLargest {
-    private PriorityQueue<Integer> minHeap;
+    private PriorityQueue<Integer> minHeap; 
     private int k;
 
     public KthLargest(int k, int[] nums) {
