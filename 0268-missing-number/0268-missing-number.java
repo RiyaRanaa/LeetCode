@@ -1,25 +1,12 @@
 class Solution {
     public int missingNumber(int[] arr) {
-        int i=0;
-        while(i<arr.length){
-            int correct=arr[i];
-            if(arr[i]<arr.length && arr[i]!=arr[correct]){
-                swap(arr,i,correct);
-            }
-            else{
-                i++;
-            }
+        int n=arr.length;
+        int totalsum=(n*(n+1))/2; // Calculate the expected sum of numbers from 0 to n
+        int s2=0;
+        for(int i=0;i<n;i++){// Calculate the actual sum of numbers in the array
+            s2 += arr[i];
         }
-        for(int index=0;index<arr.length;index++){
-            if(arr[index]!=index){
-                return index;
-            }
-        }
-        return arr.length;
-    }
-    void swap(int[]arr,int first,int second){
-        int temp=arr[first];
-        arr[first]=arr[second];
-        arr[second]=temp;
+        int msum=totalsum-s2;// The missing number is the difference between the total sum and the actual sum
+        return msum;
     }
 }
